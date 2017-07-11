@@ -1,4 +1,4 @@
-dist: trusty
+dist: zesty
 language: ruby
 sudo: required
 
@@ -7,7 +7,7 @@ addons:
     sources:
       - google-chrome
     packages:
-      - chromium-browser=57.0.2987.98-0ubuntu1.1348
+      - chromium-browser
 
 before_script:
   - cp .env.example .env
