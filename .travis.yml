@@ -7,13 +7,14 @@ addons:
     sources:
       - google-chrome
     packages:
-      - chromium-browser
+      - google-chrome-stable
 
 before_script:
   - cp .env.example .env
   - bundle --without development production
   - wget http://chromedriver.storage.googleapis.com/2.27/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
+  - sudo cp chromedriver /usr/local/bin/.
   - sudo chmod +x /usr/local/bin/chromedriver
   - /usr/local/bin/chromedriver --version
   - export DISPLAY=:99.0
