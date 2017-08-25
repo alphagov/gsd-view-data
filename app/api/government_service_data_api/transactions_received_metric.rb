@@ -11,12 +11,12 @@ class GovernmentServiceDataAPI::TransactionsReceivedMetric
   end
 
   def initialize(total: nil, online: nil, phone: nil, paper: nil, face_to_face: nil, other: nil)
-    @total = total || 0
-    @online = online || 0
-    @phone = phone || 0
-    @paper = paper || 0
-    @face_to_face = face_to_face || 0
-    @other = other || 0
+    @total = total
+    @online = online
+    @phone = phone
+    @paper = paper
+    @face_to_face = face_to_face
+    @other = other
   end
 
   attr_reader :total, :online, :phone, :paper, :face_to_face, :other
@@ -39,5 +39,9 @@ class GovernmentServiceDataAPI::TransactionsReceivedMetric
 
   def other_percentage
     (@other.to_f / total) * 100
+  end
+
+  def is_applicable
+    [@online, @phone, @paper, @face_to_face, @other].compact.length.positive?
   end
 end
