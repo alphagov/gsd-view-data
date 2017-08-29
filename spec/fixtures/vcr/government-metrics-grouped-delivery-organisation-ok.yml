@@ -29,18 +29,18 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - cef082b8-6ccf-4ac2-b890-345dda7064c8
+      - eca53cce-c1b3-4665-be71-7dfc8daf12ff
       x-runtime:
-      - '0.006117'
+      - '0.004591'
       date:
-      - Fri, 25 Aug 2017 14:09:10 GMT
+      - Tue, 29 Aug 2017 09:23:42 GMT
       connection:
       - close
     body:
       encoding: UTF-8
       string: '{"type":"government","departments_count":7,"delivery_organisations_count":8,"services_count":31}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:10 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:42 GMT
 - request:
     method: get
     uri: http://gsd-api.dev/v1/data/government/metrics?group_by=delivery_organisation
@@ -70,11 +70,11 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 3367d70e-64fa-4d70-ae62-52f4b219bde1
+      - dd52932c-f069-452c-b761-598b9824ae52
       x-runtime:
-      - '0.085505'
+      - '0.092280'
       date:
-      - Fri, 25 Aug 2017 14:09:10 GMT
+      - Tue, 29 Aug 2017 09:23:42 GMT
       connection:
       - close
     body:
@@ -97,5 +97,5 @@ http_interactions:
         Loans Company","website":"http://example.com/student-loans-company","services_count":4,"department":{"type":"department","natural_key":"D0006","name":"Department
         for Education","website":"http://example.com/department-for-education","delivery_organisations_count":2,"services_count":7}},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":10000413,"online":4000220,"phone":4000106,"paper":2000087,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":8435494,"with_intended_outcome":6957819}]}]}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:10 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:42 GMT
 recorded_with: VCR 3.0.3

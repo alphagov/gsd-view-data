@@ -31,8 +31,8 @@ RSpec.feature 'viewing metrics', type: :feature do
           ['Department of Health', '18132669'],
           ['Department for Education', '13000475'],
           ['Department for Environment Food & Rural Affairs', '3000039'],
-          ['Department for Business, Energy & Industrial Strategy', '0'],
-          ['HM Revenue & Customs', '0'],
+          ['Department for Business, Energy & Industrial Strategy', nil],
+          ['HM Revenue & Customs', nil],
         ])
 
         if javascript_enabled
@@ -45,8 +45,8 @@ RSpec.feature 'viewing metrics', type: :feature do
         all('a', text: /\AOpen\z/).each(&:click) if javascript_enabled
 
         expect(metric_groups(:name, :transactions_received_total)).to eq([
-          ['HM Revenue & Customs', '0'],
-          ['Department for Business, Energy & Industrial Strategy', '0'],
+          ['HM Revenue & Customs', nil],
+          ['Department for Business, Energy & Industrial Strategy', nil],
           ['Department for Environment Food & Rural Affairs', '3000039'],
           ['Department for Education', '13000475'],
           ['Department of Health', '18132669'],
@@ -65,6 +65,15 @@ RSpec.feature 'viewing metrics', type: :feature do
 
       select 'transactions received', from: 'Sort by'
       expect(page).to have_selector('.m-metric-group[data-behaviour~="m-metric-group__collapsible"]', count: 8)
+    end
+
+    it 'does not show metrics that are not applicable', cassette: 'viewing-metrics-sorting-metrics' do
+      visit government_metrics_path(group_by: Metrics::Group::Department)
+      click_link 'HM Revenue & Customs'
+      expect(page).to have_text('HM Revenue & Customs')
+      expect(page).to have_text('N/A', count: 2)
+      expect(page).to have_text("doesn't process transactions")
+      expect(page).to have_text("doesn't receive calls")
     end
   end
 
@@ -90,7 +99,11 @@ RSpec.feature 'viewing metrics', type: :feature do
     end
 
     def transactions_received_total
-      element.find('.m-metric__transactions-received .m-metric-headline data', visible: false)[:value]
+      begin
+        element.find('.m-metric__transactions-received .m-metric-headline data', visible: false)[:value]
+      rescue
+        nil
+      end
     end
   end
 end

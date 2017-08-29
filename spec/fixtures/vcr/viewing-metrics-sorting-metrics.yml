@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://gsd-api.dev/v1/data/government
+    uri: http://gsd-api.dev/v1/data/departments/D0004
     body:
       encoding: US-ASCII
       string: ''
@@ -25,25 +25,26 @@ http_interactions:
       content-type:
       - application/json; charset=utf-8
       etag:
-      - W/"8707143287988501f058572a4a858fbd"
+      - W/"90c7f4463d8bbd0c00a36017b36ec708"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - e805d89c-5e0b-4089-a713-9b059c1d3d91
+      - 0dcfff25-c7cd-4bbc-908b-80b23aaacde8
       x-runtime:
-      - '0.005173'
+      - '0.007587'
       date:
-      - Fri, 25 Aug 2017 14:09:15 GMT
+      - Tue, 29 Aug 2017 09:23:44 GMT
       connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"type":"government","departments_count":7,"delivery_organisations_count":8,"services_count":31}'
+      string: '{"type":"department","natural_key":"D0004","name":"HM Revenue \u0026
+        Customs","website":"http://example.com/hm-revenue-and-customs","delivery_organisations_count":0,"services_count":5}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:15 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:45 GMT
 - request:
     method: get
-    uri: http://gsd-api.dev/v1/data/government/metrics?group_by=department
+    uri: http://gsd-api.dev/v1/data/departments/D0004/metrics?group_by=delivery_organisation
     body:
       encoding: US-ASCII
       string: ''
@@ -66,29 +67,22 @@ http_interactions:
       content-type:
       - application/json; charset=utf-8
       etag:
-      - W/"b949b698169094c65e095fd890aaca8d"
+      - W/"978ee6ca1988f088c9905660e0b2dea3"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 263c43ef-18c2-4f66-a0e0-bb196051c6c5
+      - a5c4969d-a89f-4e18-af62-1acbb1f6a5cc
       x-runtime:
-      - '0.060743'
+      - '0.009790'
       date:
-      - Fri, 25 Aug 2017 14:09:15 GMT
+      - Tue, 29 Aug 2017 09:23:45 GMT
       connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"group_by":"department","metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":746067381,"online":648825681,"phone":38355269,"paper":35775321,"face_to_face":null,"other":23111110},{"type":"transactions-with-outcome","total":710427383,"with_intended_outcome":604814744}],"metric_groups":[{"entity":{"type":"department","natural_key":"D0001","name":"Department
-        for Environment Food \u0026 Rural Affairs","website":"http://example.com/department-for-environment-food-and-rural-affairs","delivery_organisations_count":1,"services_count":1},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":3000039,"online":1000032,"phone":1000003,"paper":1000004,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":2435098,"with_intended_outcome":2400000}]},{"entity":{"type":"department","natural_key":"D0002","name":"Department
-        for Transport","website":"http://example.com/department-for-transport","delivery_organisations_count":2,"services_count":9},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":118679511,"online":70711048,"phone":10123774,"paper":17857035,"face_to_face":null,"other":19987654},{"type":"transactions-with-outcome","total":114587788,"with_intended_outcome":92321116}]},{"entity":{"type":"department","natural_key":"D0003","name":"Department
-        of Health","website":"http://example.com/department-of-health","delivery_organisations_count":2,"services_count":4},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":18132669,"online":4000048,"phone":14132621,"paper":null,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":19281820,"with_intended_outcome":15424926}]},{"entity":{"type":"department","natural_key":"D0004","name":"HM
-        Revenue \u0026 Customs","website":"http://example.com/hm-revenue-and-customs","delivery_organisations_count":0,"services_count":5},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":0,"online":null,"phone":null,"paper":null,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":0,"with_intended_outcome":0}]},{"entity":{"type":"department","natural_key":"D0005","name":"Ministry
-        of Justice","website":"http://example.com/ministry-of-justice","delivery_organisations_count":1,"services_count":5},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":593254687,"online":566114271,"phone":9098765,"paper":14918195,"face_to_face":null,"other":3123456},{"type":"transactions-with-outcome","total":562002435,"with_intended_outcome":485131983}]},{"entity":{"type":"department","natural_key":"D0006","name":"Department
-        for Education","website":"http://example.com/department-for-education","delivery_organisations_count":2,"services_count":7},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":13000475,"online":7000282,"phone":4000106,"paper":2000087,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":12120242,"with_intended_outcome":9536719}]},{"entity":{"type":"department","natural_key":"D0007","name":"Department
-        for Business, Energy \u0026 Industrial Strategy","website":"http://example.com/department-for-business-energy-and-industrial-strategy","delivery_organisations_count":0,"services_count":0},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":0,"online":null,"phone":null,"paper":null,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":0,"with_intended_outcome":0}]}]}'
+      string: '{"group_by":"delivery_organisation","metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":0,"online":null,"phone":null,"paper":null,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":0,"with_intended_outcome":0}],"metric_groups":[]}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:15 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:45 GMT
 - request:
     method: get
     uri: http://gsd-api.dev/v1/data/government
@@ -118,18 +112,18 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - ec678bfe-b84e-4edf-9d2c-7d47fa007902
+      - 27ef500c-f21f-4a90-af46-16caf9a3c25b
       x-runtime:
-      - '0.005903'
+      - '0.005396'
       date:
-      - Fri, 25 Aug 2017 14:09:15 GMT
+      - Tue, 29 Aug 2017 09:23:54 GMT
       connection:
       - close
     body:
       encoding: UTF-8
       string: '{"type":"government","departments_count":7,"delivery_organisations_count":8,"services_count":31}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:15 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:54 GMT
 - request:
     method: get
     uri: http://gsd-api.dev/v1/data/government/metrics?group_by=department
@@ -159,11 +153,11 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - f1a2b492-6ca0-4cf3-9044-45eb43269c70
+      - 84af45cb-4bc8-48eb-a630-85f18abdf0c8
       x-runtime:
-      - '0.061821'
+      - '0.075760'
       date:
-      - Fri, 25 Aug 2017 14:09:15 GMT
+      - Tue, 29 Aug 2017 09:23:54 GMT
       connection:
       - close
     body:
@@ -177,7 +171,7 @@ http_interactions:
         for Education","website":"http://example.com/department-for-education","delivery_organisations_count":2,"services_count":7},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":13000475,"online":7000282,"phone":4000106,"paper":2000087,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":12120242,"with_intended_outcome":9536719}]},{"entity":{"type":"department","natural_key":"D0007","name":"Department
         for Business, Energy \u0026 Industrial Strategy","website":"http://example.com/department-for-business-energy-and-industrial-strategy","delivery_organisations_count":0,"services_count":0},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":0,"online":null,"phone":null,"paper":null,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":0,"with_intended_outcome":0}]}]}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:15 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:54 GMT
 - request:
     method: get
     uri: http://gsd-api.dev/v1/data/government
@@ -207,18 +201,18 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 37d9c634-8233-4fb0-945d-04f00e3f41eb
+      - 34672534-a6ee-447d-9b0d-16fd1dc18498
       x-runtime:
-      - '0.004573'
+      - '0.004479'
       date:
-      - Fri, 25 Aug 2017 14:09:15 GMT
+      - Tue, 29 Aug 2017 09:23:54 GMT
       connection:
       - close
     body:
       encoding: UTF-8
       string: '{"type":"government","departments_count":7,"delivery_organisations_count":8,"services_count":31}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:15 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:54 GMT
 - request:
     method: get
     uri: http://gsd-api.dev/v1/data/government/metrics?group_by=department
@@ -248,11 +242,11 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 491707ff-cb9b-42fc-b83c-f178eb0454b2
+      - e23d141d-5e55-40fb-99ff-543185e38d82
       x-runtime:
-      - '0.061175'
+      - '0.066739'
       date:
-      - Fri, 25 Aug 2017 14:09:15 GMT
+      - Tue, 29 Aug 2017 09:23:54 GMT
       connection:
       - close
     body:
@@ -266,5 +260,94 @@ http_interactions:
         for Education","website":"http://example.com/department-for-education","delivery_organisations_count":2,"services_count":7},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":13000475,"online":7000282,"phone":4000106,"paper":2000087,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":12120242,"with_intended_outcome":9536719}]},{"entity":{"type":"department","natural_key":"D0007","name":"Department
         for Business, Energy \u0026 Industrial Strategy","website":"http://example.com/department-for-business-energy-and-industrial-strategy","delivery_organisations_count":0,"services_count":0},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":0,"online":null,"phone":null,"paper":null,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":0,"with_intended_outcome":0}]}]}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:15 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:54 GMT
+- request:
+    method: get
+    uri: http://gsd-api.dev/v1/data/government
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic dGVzdDp0ZXN0
+      User-Agent:
+      - Faraday v0.12.1
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - W/"8707143287988501f058572a4a858fbd"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 006f045d-6832-401a-8ed7-677fa17a421f
+      x-runtime:
+      - '0.005013'
+      date:
+      - Tue, 29 Aug 2017 09:23:54 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"type":"government","departments_count":7,"delivery_organisations_count":8,"services_count":31}'
+    http_version: 
+  recorded_at: Tue, 29 Aug 2017 09:23:54 GMT
+- request:
+    method: get
+    uri: http://gsd-api.dev/v1/data/government/metrics?group_by=department
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic dGVzdDp0ZXN0
+      User-Agent:
+      - Faraday v0.12.1
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - W/"b949b698169094c65e095fd890aaca8d"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 11557c6e-02e6-4d12-a5da-f4ff13c2deaf
+      x-runtime:
+      - '0.071081'
+      date:
+      - Tue, 29 Aug 2017 09:23:54 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"group_by":"department","metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":746067381,"online":648825681,"phone":38355269,"paper":35775321,"face_to_face":null,"other":23111110},{"type":"transactions-with-outcome","total":710427383,"with_intended_outcome":604814744}],"metric_groups":[{"entity":{"type":"department","natural_key":"D0001","name":"Department
+        for Environment Food \u0026 Rural Affairs","website":"http://example.com/department-for-environment-food-and-rural-affairs","delivery_organisations_count":1,"services_count":1},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":3000039,"online":1000032,"phone":1000003,"paper":1000004,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":2435098,"with_intended_outcome":2400000}]},{"entity":{"type":"department","natural_key":"D0002","name":"Department
+        for Transport","website":"http://example.com/department-for-transport","delivery_organisations_count":2,"services_count":9},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":118679511,"online":70711048,"phone":10123774,"paper":17857035,"face_to_face":null,"other":19987654},{"type":"transactions-with-outcome","total":114587788,"with_intended_outcome":92321116}]},{"entity":{"type":"department","natural_key":"D0003","name":"Department
+        of Health","website":"http://example.com/department-of-health","delivery_organisations_count":2,"services_count":4},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":18132669,"online":4000048,"phone":14132621,"paper":null,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":19281820,"with_intended_outcome":15424926}]},{"entity":{"type":"department","natural_key":"D0004","name":"HM
+        Revenue \u0026 Customs","website":"http://example.com/hm-revenue-and-customs","delivery_organisations_count":0,"services_count":5},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":0,"online":null,"phone":null,"paper":null,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":0,"with_intended_outcome":0}]},{"entity":{"type":"department","natural_key":"D0005","name":"Ministry
+        of Justice","website":"http://example.com/ministry-of-justice","delivery_organisations_count":1,"services_count":5},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":593254687,"online":566114271,"phone":9098765,"paper":14918195,"face_to_face":null,"other":3123456},{"type":"transactions-with-outcome","total":562002435,"with_intended_outcome":485131983}]},{"entity":{"type":"department","natural_key":"D0006","name":"Department
+        for Education","website":"http://example.com/department-for-education","delivery_organisations_count":2,"services_count":7},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":13000475,"online":7000282,"phone":4000106,"paper":2000087,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":12120242,"with_intended_outcome":9536719}]},{"entity":{"type":"department","natural_key":"D0007","name":"Department
+        for Business, Energy \u0026 Industrial Strategy","website":"http://example.com/department-for-business-energy-and-industrial-strategy","delivery_organisations_count":0,"services_count":0},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":0,"online":null,"phone":null,"paper":null,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":0,"with_intended_outcome":0}]}]}'
+    http_version: 
+  recorded_at: Tue, 29 Aug 2017 09:23:54 GMT
 recorded_with: VCR 3.0.3

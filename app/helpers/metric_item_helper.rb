@@ -2,7 +2,6 @@ module MetricItemHelper
   def metric_item(identifier, sampled: false, html: {})
     item = MetricItem.new(self)
     content = capture { yield(item) } || ''
-
     guidance = translate("metric_guidance.#{identifier}.description")
 
     html[:data] ||= {}
@@ -10,7 +9,6 @@ module MetricItemHelper
 
     html[:class] = Array.wrap(html[:class])
     html[:class] << 'sampled' if sampled
-
 
     content += content_tag(:span, class: 'm-metric-guidance-toggle') do
       content_tag(:a, '+', href: '#', class: 'a-metric-guidance-expand', data: { behaviour: 'a-metric-guidance-toggle' })
