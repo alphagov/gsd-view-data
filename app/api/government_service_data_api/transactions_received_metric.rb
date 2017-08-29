@@ -41,7 +41,7 @@ class GovernmentServiceDataAPI::TransactionsReceivedMetric
     (@other.to_f / total) * 100
   end
 
-  def is_applicable
+  def is_provided
     [@online, @phone, @paper, @face_to_face, @other].compact.length.positive?
   end
 end

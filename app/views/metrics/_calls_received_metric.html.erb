@@ -1,82 +1,95 @@
 <div class="m-metric <% if calls_received_metric.sampled %>m-metric__sampled<% end %>">
-  <% if calls_received_metric.is_applicable %>
+  <% if calls_received_metric.is_provided %>
     <ul class="list">
-      <% if !calls_received_metric.total.nil? %>
-        <%= metric_item(Metrics::Items::CallsReceived, html: { class: 'm-metric-headline' }) do |item| %>
-          <% item.description do %>
-            <strong><%= metric_to_human(calls_received_metric.total) %></strong> calls received
-          <% end %>
+      <%= metric_item(Metrics::Items::CallsReceived, html: { class: 'm-metric-headline' }) do |item| %>
+        <% item.description do %>
+          <strong><%= metric_to_human(calls_received_metric.total) %></strong> calls received
+        <% end %>
 
-          <span class="total">
+        <span class="total">
+          <% if calls_received_metric.total.nil? %>
+            <span class='item-not-provided'>Not provided</span>
+          <% else %>
             <span class="bold-large"><%= metric_to_human(calls_received_metric.total) %></span>
             <span class="data-item bold">calls received</span>
+          <% end %>
           </span><% if calls_received_metric.sampled %><span class="sampled"><!-- this is intentionally squashed to preseve layout -->
-              <span class="bold-large"><%= metric_to_human(calls_received_metric.sampled_total) %></span>
-              <span class="data-item bold">calls sample size</span>
+            <span class="bold-large"><%= metric_to_human(calls_received_metric.sampled_total) %></span>
+            <span class="data-item bold">calls sample size</span>
+        <% end %>
+      </span>
+      <% end %>
+
+
+      <%= metric_item(Metrics::Items::CallsReceivedGetInformation, sampled: calls_received_metric.sampled) do |item| %>
+        <% item.description do %>
+          <strong><%= metric_to_human(calls_received_metric.get_information) %></strong> calls received to get information (<%= metric_to_percentage(calls_received_metric.get_information_percentage) %>)
+        <% end %>
+
+        <span class="metric-name">To get information</span>
+        <span class="metric-value">
+          <% if calls_received_metric.get_information.nil? %>
+            <span class='item-not-provided'>Not provided</span>
+          <% else %>
+          <span class="metric-value-count"><%= metric_to_human(calls_received_metric.get_information) %></span>
+          <span class="metric-value-percentage">(<%= metric_to_percentage(calls_received_metric.get_information_percentage) %>)</span>
           <% end %>
         </span>
-        <% end %>
       <% end %>
 
-      <% if !calls_received_metric.get_information.nil? %>
-        <%= metric_item(Metrics::Items::CallsReceivedGetInformation, sampled: calls_received_metric.sampled) do |item| %>
-          <% item.description do %>
-            <strong><%= metric_to_human(calls_received_metric.get_information) %></strong> calls received to get information (<%= metric_to_percentage(calls_received_metric.get_information_percentage) %>)
-          <% end %>
-
-          <span class="metric-name">To get information</span>
-          <span class="metric-value">
-            <span class="metric-value-count"><%= metric_to_human(calls_received_metric.get_information) %></span>
-            <span class="metric-value-percentage">(<%= metric_to_percentage(calls_received_metric.get_information_percentage) %>)</span>
-          </span>
+      <%= metric_item(Metrics::Items::CallsReceivedChaseProgress, sampled: calls_received_metric.sampled) do |item| %>
+        <% item.description do %>
+          <strong><%= metric_to_human(calls_received_metric.chase_progress) %></strong> calls received to chase progress (<%= metric_to_percentage(calls_received_metric.chase_progress_percentage) %>)
         <% end %>
-      <% end %>
 
-      <% if !calls_received_metric.chase_progress.nil? %>
-        <%= metric_item(Metrics::Items::CallsReceivedChaseProgress, sampled: calls_received_metric.sampled) do |item| %>
-          <% item.description do %>
-            <strong><%= metric_to_human(calls_received_metric.chase_progress) %></strong> calls received to chase progress (<%= metric_to_percentage(calls_received_metric.chase_progress_percentage) %>)
-          <% end %>
-
-          <span class="metric-name">To chase progress</span>
-          <span class="metric-value">
+        <span class="metric-name">To chase progress</span>
+          <span class='item-not-provided'>Not provided</span>
+        <span class="metric-value">
+          <% if calls_received_metric.chase_progress.nil? %>
+          <% else %>
             <span class="metric-value-count"><%= metric_to_human(calls_received_metric.chase_progress) %></span>
             <span class="metric-value-percentage">(<%= metric_to_percentage(calls_received_metric.chase_progress_percentage) %>)</span>
-          </span>
-        <% end %>
+          <% end %>
+        </span>
       <% end %>
 
-      <% if !calls_received_metric.challenge_a_decision.nil? %>
-        <%= metric_item(Metrics::Items::CallsReceivedChallengeADecision, sampled: calls_received_metric.sampled) do |item| %>
-          <% item.description do %>
-            <strong><%= metric_to_human(calls_received_metric.challenge_a_decision) %></strong> calls received to challenge a decision (<%= metric_to_percentage(calls_received_metric.challenge_a_decision_percentage) %>)
-          <% end %>
 
-          <span class="metric-name">To challenge a decision</span>
-          <span class="metric-value">
+      <%= metric_item(Metrics::Items::CallsReceivedChallengeADecision, sampled: calls_received_metric.sampled) do |item| %>
+        <% item.description do %>
+          <strong><%= metric_to_human(calls_received_metric.challenge_a_decision) %></strong> calls received to challenge a decision (<%= metric_to_percentage(calls_received_metric.challenge_a_decision_percentage) %>)
+        <% end %>
+
+        <span class="metric-name">To challenge a decision</span>
+        <span class="metric-value">
+          <% if calls_received_metric.challenge_a_decision.nil? %>
+            <span class='item-not-provided'>Not provided</span>
+          <% else %>
             <span class="metric-value-count"><%= metric_to_human(calls_received_metric.challenge_a_decision) %></span>
             <span class="metric-value-percentage">(<%= metric_to_percentage(calls_received_metric.challenge_a_decision_percentage) %>)</span>
-          </span>
-        <% end %>
+          <% end %>
+        </span>
       <% end %>
 
-      <% if !calls_received_metric.other.nil? %>
-        <%= metric_item(Metrics::Items::CallsReceivedOther, sampled: calls_received_metric.sampled) do |item| %>
-          <% item.description do %>
-            <strong><%= metric_to_human(calls_received_metric.get_information) %></strong> other calls received (<%= metric_to_percentage(calls_received_metric.other_percentage) %>)
-          <% end %>
 
-          <span class="metric-name">Other</span>
-          <span class="metric-value">
+      <%= metric_item(Metrics::Items::CallsReceivedOther, sampled: calls_received_metric.sampled) do |item| %>
+        <% item.description do %>
+          <strong><%= metric_to_human(calls_received_metric.get_information) %></strong> other calls received (<%= metric_to_percentage(calls_received_metric.other_percentage) %>)
+        <% end %>
+
+        <span class="metric-name">Other</span>
+        <span class="metric-value">
+          <% if calls_received_metric.other.nil? %>
+            <span class='item-not-provided'>Not provided</span>
+          <% else %>
             <span class="metric-value-count"><%= metric_to_human(calls_received_metric.other) %></span>
             <span class="metric-value-percentage">(<%= metric_to_percentage(calls_received_metric.other_percentage) %>)</span>
-          </span>
-        <% end %>
+          <% end %>
+        </span>
       <% end %>
     </ul>
   <% else %>
-    <div class="not-applicable">N/A</div>
-    <span class="not-applicable-text">doesn't receive calls</span>
+    <div class="not-provided">Not provided</div>
+    <span class="not-provided-text">calls received</span>
     <div data-metric-item-description=" " data-metric-item-identifier="calls-received"></div>
   <% end %>
 </div>

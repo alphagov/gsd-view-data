@@ -1,5 +1,5 @@
 <div class="m-metric m-metric__transactions-with-outcome">
-  <% if transactions_with_outcome_metric.is_applicable %>
+  <% if transactions_with_outcome_metric.is_provided %>
     <ul class="list">
       <%= metric_item(Metrics::Items::TransactionsEndingInOutcome, html: { class: 'm-metric-headline' }) do |item| %>
         <% item.description do %>
@@ -7,8 +7,12 @@
         <% end %>
 
         <span class="total">
+          <% if transactions_with_outcome_metric.count.nil? %>
+            <span class='item-not-provided'>Not provided</span>
+          <% else %>
           <span class="data-item bold-large"><%= metric_to_human(transactions_with_outcome_metric.count) %></span>
           <span class="data-item bold">transactions ending in an outcome</span>
+          <% end %>
         </span>
       <% end %>
 
@@ -19,14 +23,20 @@
 
         <span class="metric-name">Ending in the user&apos;s intended outcome</span>
         <span class="metric-value">
-          <span class="metric-value-count"><%= metric_to_human(transactions_with_outcome_metric.count_with_intended_outcome) %></span>
-          <span class="metric-value-percentage">(<%= metric_to_percentage(transactions_with_outcome_metric.with_intended_outcome_percentage) %>)</span>
+          <% if transactions_with_outcome_metric.count_with_intended_outcome.nil? %>
+            <span class='item-not-provided'>Not provided</span>
+          <% else %>
+            <span class="metric-value-count"><%= metric_to_human(transactions_with_outcome_metric.count_with_intended_outcome) %></span>
+            <span class="metric-value-percentage">(<%= metric_to_percentage(transactions_with_outcome_metric.with_intended_outcome_percentage) %>)</span>
+          <% end %>
         </span>
       <% end %>
     </ul>
   <% else %>
-    <div class="not-applicable">N/A</div>
-    <span class="not-applicable-text">doesn't measure outcomes</span>
+    <div class="not-provided">Not provided</div>
+    <span class="not-provided-text">outcomes</span>
     <div data-metric-item-description=" " data-metric-item-identifier="transactions-ending-in-outcome"></div>
   <% end %>
 </div>
+
+

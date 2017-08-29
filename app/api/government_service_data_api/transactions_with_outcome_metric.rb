@@ -17,7 +17,7 @@ class GovernmentServiceDataAPI::TransactionsWithOutcomeMetric
     (@count_with_intended_outcome.to_f / @count) * 100
   end
 
-  def is_applicable
+  def is_provided
     [@count, @count_with_intended_outcome].compact.length.positive?
   end
 end

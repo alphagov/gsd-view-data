@@ -40,7 +40,7 @@ class GovernmentServiceDataAPI::CallsReceivedMetric
     (@other.to_f / sampled_total) * 100
   end
 
-  def is_applicable
+  def is_provided
     [@sampled_total, @get_information, @chase_progress, @challenge_a_decision, @other].compact.length.positive?
   end
 end

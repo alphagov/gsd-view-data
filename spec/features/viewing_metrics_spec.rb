@@ -71,9 +71,9 @@ RSpec.feature 'viewing metrics', type: :feature do
       visit government_metrics_path(group_by: Metrics::Group::Department)
       click_link 'HM Revenue & Customs'
       expect(page).to have_text('HM Revenue & Customs')
-      expect(page).to have_text('N/A', count: 2)
-      expect(page).to have_text("doesn't process transactions")
-      expect(page).to have_text("doesn't receive calls")
+      expect(page).to have_text('Not provided', count: 2)
+      expect(page).to have_text("calls received")
+      expect(page).to have_text("transactions received")
     end
   end
 
