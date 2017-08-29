@@ -29,18 +29,18 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 4f675df0-afff-4a0f-aaaa-2822eccc1139
+      - 9ba88e3f-58a9-4cb2-b95d-cc33e33c74bc
       x-runtime:
-      - '0.005710'
+      - '0.005213'
       date:
-      - Fri, 25 Aug 2017 14:09:10 GMT
+      - Tue, 29 Aug 2017 09:23:41 GMT
       connection:
       - close
     body:
       encoding: UTF-8
       string: '{"type":"government","departments_count":7,"delivery_organisations_count":8,"services_count":31}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:10 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:41 GMT
 - request:
     method: get
     uri: http://gsd-api.dev/v1/data/government/metrics?group_by=government
@@ -70,16 +70,16 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - '0405568d-b6da-4599-b559-d10f64025fb6'
+      - abd3303a-9030-49eb-a1af-22daa2a8a75b
       x-runtime:
-      - '0.022170'
+      - '0.018438'
       date:
-      - Fri, 25 Aug 2017 14:09:10 GMT
+      - Tue, 29 Aug 2017 09:23:41 GMT
       connection:
       - close
     body:
       encoding: UTF-8
       string: '{"group_by":"government","metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":746067381,"online":648825681,"phone":38355269,"paper":35775321,"face_to_face":null,"other":23111110},{"type":"transactions-with-outcome","total":710427383,"with_intended_outcome":604814744}],"metric_groups":[{"entity":{"type":"government","departments_count":7,"delivery_organisations_count":8,"services_count":31},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":746067381,"online":648825681,"phone":38355269,"paper":35775321,"face_to_face":null,"other":23111110},{"type":"transactions-with-outcome","total":710427383,"with_intended_outcome":604814744}]}]}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:10 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:42 GMT
 recorded_with: VCR 3.0.3
