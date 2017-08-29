@@ -29,18 +29,18 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - be3a3969-67d6-4838-8bc7-a8f887765c29
+      - 46a46165-733d-443a-8d69-509d4f9a5bc8
       x-runtime:
-      - '0.009206'
+      - '0.008040'
       date:
-      - Fri, 25 Aug 2017 14:09:11 GMT
+      - Tue, 29 Aug 2017 09:23:42 GMT
       connection:
       - close
     body:
       encoding: UTF-8
       string: '{"type":"department","natural_key":"D0002","name":"Department for Transport","website":"http://example.com/department-for-transport","delivery_organisations_count":2,"services_count":9}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:11 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:42 GMT
 - request:
     method: get
     uri: http://gsd-api.dev/v1/data/departments/D0002/metrics?group_by=department
@@ -70,11 +70,11 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - afa5b5e9-3bd1-4148-81e7-bccc30131891
+      - bf3c05be-f02f-40b4-a426-29e84b0bfd03
       x-runtime:
-      - '0.018670'
+      - '0.015885'
       date:
-      - Fri, 25 Aug 2017 14:09:11 GMT
+      - Tue, 29 Aug 2017 09:23:42 GMT
       connection:
       - close
     body:
@@ -82,5 +82,5 @@ http_interactions:
       string: '{"group_by":"department","metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":118679511,"online":70711048,"phone":10123774,"paper":17857035,"face_to_face":null,"other":19987654},{"type":"transactions-with-outcome","total":114587788,"with_intended_outcome":92321116}],"metric_groups":[{"entity":{"type":"department","natural_key":"D0002","name":"Department
         for Transport","website":"http://example.com/department-for-transport","delivery_organisations_count":2,"services_count":9},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":118679511,"online":70711048,"phone":10123774,"paper":17857035,"face_to_face":null,"other":19987654},{"type":"transactions-with-outcome","total":114587788,"with_intended_outcome":92321116}]}]}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:11 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:42 GMT
 recorded_with: VCR 3.0.3

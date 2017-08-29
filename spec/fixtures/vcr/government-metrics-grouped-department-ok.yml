@@ -29,18 +29,18 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - fb69ff46-320c-4880-a4f2-a24714f7317b
+      - 99f1635c-9ff0-4ab4-8045-f2d66629fb56
       x-runtime:
-      - '0.004657'
+      - '0.005257'
       date:
-      - Fri, 25 Aug 2017 14:09:10 GMT
+      - Tue, 29 Aug 2017 09:23:42 GMT
       connection:
       - close
     body:
       encoding: UTF-8
       string: '{"type":"government","departments_count":7,"delivery_organisations_count":8,"services_count":31}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:10 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:42 GMT
 - request:
     method: get
     uri: http://gsd-api.dev/v1/data/government/metrics?group_by=department
@@ -70,11 +70,11 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - ecaf4bc2-7973-4164-8abc-7203d2b71070
+      - 81e07b23-db18-419d-b9df-6ee1390c93fb
       x-runtime:
-      - '0.064354'
+      - '0.073236'
       date:
-      - Fri, 25 Aug 2017 14:09:10 GMT
+      - Tue, 29 Aug 2017 09:23:42 GMT
       connection:
       - close
     body:
@@ -88,5 +88,5 @@ http_interactions:
         for Education","website":"http://example.com/department-for-education","delivery_organisations_count":2,"services_count":7},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":13000475,"online":7000282,"phone":4000106,"paper":2000087,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":12120242,"with_intended_outcome":9536719}]},{"entity":{"type":"department","natural_key":"D0007","name":"Department
         for Business, Energy \u0026 Industrial Strategy","website":"http://example.com/department-for-business-energy-and-industrial-strategy","delivery_organisations_count":0,"services_count":0},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":0,"online":null,"phone":null,"paper":null,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":0,"with_intended_outcome":0}]}]}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:10 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:42 GMT
 recorded_with: VCR 3.0.3
