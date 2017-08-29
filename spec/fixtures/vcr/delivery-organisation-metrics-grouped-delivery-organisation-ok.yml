@@ -29,11 +29,11 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 1d2be974-4cf0-4f16-aae8-170df8f183cc
+      - b5dbfdab-d807-4e92-889e-990bcabad37e
       x-runtime:
-      - '0.012547'
+      - '0.008937'
       date:
-      - Fri, 25 Aug 2017 14:09:11 GMT
+      - Tue, 29 Aug 2017 09:23:42 GMT
       connection:
       - close
     body:
@@ -42,7 +42,7 @@ http_interactions:
         Vehicle Licensing Agency","website":"http://example.com/driver-and-vehicle-licensing-agency","services_count":5,"department":{"type":"department","natural_key":"D0002","name":"Department
         for Transport","website":"http://example.com/department-for-transport","delivery_organisations_count":2,"services_count":9}}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:11 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:42 GMT
 - request:
     method: get
     uri: http://gsd-api.dev/v1/data/delivery_organisations/03/metrics?group_by=delivery_organisation
@@ -72,11 +72,11 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - f17e0dbd-fde8-43aa-bae6-f568b2debc36
+      - edf9c598-52c7-48c1-8536-77833e078676
       x-runtime:
-      - '0.019681'
+      - '0.024928'
       date:
-      - Fri, 25 Aug 2017 14:09:11 GMT
+      - Tue, 29 Aug 2017 09:23:42 GMT
       connection:
       - close
     body:
@@ -85,5 +85,5 @@ http_interactions:
         and Vehicle Licensing Agency","website":"http://example.com/driver-and-vehicle-licensing-agency","services_count":5,"department":{"type":"department","natural_key":"D0002","name":"Department
         for Transport","website":"http://example.com/department-for-transport","delivery_organisations_count":2,"services_count":9}},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":70123862,"online":45143108,"phone":7123719,"paper":17857035,"face_to_face":null,"other":null},{"type":"transactions-with-outcome","total":70842643,"with_intended_outcome":58650122}]}]}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:11 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:42 GMT
 recorded_with: VCR 3.0.3

@@ -29,18 +29,18 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - a583af2f-8bb2-476b-a544-357e2c0455a2
+      - 49b797e9-18b2-4ec9-a1a6-50522da9b635
       x-runtime:
-      - '0.007726'
+      - '0.008020'
       date:
-      - Fri, 25 Aug 2017 14:09:11 GMT
+      - Tue, 29 Aug 2017 09:23:42 GMT
       connection:
       - close
     body:
       encoding: UTF-8
       string: '{"type":"department","natural_key":"D0002","name":"Department for Transport","website":"http://example.com/department-for-transport","delivery_organisations_count":2,"services_count":9}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:11 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:42 GMT
 - request:
     method: get
     uri: http://gsd-api.dev/v1/data/departments/D0002/metrics?group_by=delivery_organisation
@@ -70,11 +70,11 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 86e14444-c5f3-4879-9ad6-e0a46ff3daae
+      - 272ca2c9-191e-4a4b-bc77-e5e0c57a3cdb
       x-runtime:
-      - '0.033872'
+      - '0.029559'
       date:
-      - Fri, 25 Aug 2017 14:09:11 GMT
+      - Tue, 29 Aug 2017 09:23:42 GMT
       connection:
       - close
     body:
@@ -85,5 +85,5 @@ http_interactions:
         and Vehicle Standards Agency","website":"http://example.com/driver-and-vehicle-standards-agency","services_count":4,"department":{"type":"department","natural_key":"D0002","name":"Department
         for Transport","website":"http://example.com/department-for-transport","delivery_organisations_count":2,"services_count":9}},"metrics":[{"type":"calls-received","total":null,"get_information":null,"chase_progress":null,"challenge_a_decision":null,"other":null,"sampled":false,"sampled_total":null},{"type":"transactions-received","total":48555649,"online":25567940,"phone":3000055,"paper":null,"face_to_face":null,"other":19987654},{"type":"transactions-with-outcome","total":43745145,"with_intended_outcome":33670994}]}]}'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 14:09:11 GMT
+  recorded_at: Tue, 29 Aug 2017 09:23:42 GMT
 recorded_with: VCR 3.0.3

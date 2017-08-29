@@ -66,6 +66,15 @@ RSpec.feature 'viewing metrics', type: :feature do
       select 'transactions received', from: 'Sort by'
       expect(page).to have_selector('.m-metric-group[data-behaviour~="m-metric-group__collapsible"]', count: 8)
     end
+
+    it 'does not show metrics that are not applicable', cassette: 'viewing-metrics-sorting-metrics' do
+      visit government_metrics_path(group_by: Metrics::Group::Department)
+      click_link 'HM Revenue & Customs'
+      expect(page).to have_text('HM Revenue & Customs')
+      expect(page).to have_text('N/A', count: 2)
+      expect(page).to have_text("doesn't process transactions")
+      expect(page).to have_text("doesn't receive calls")
+    end
   end
 
   private
