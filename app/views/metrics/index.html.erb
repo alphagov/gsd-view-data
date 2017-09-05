@@ -7,6 +7,7 @@
         <span class="prefix">Service data for</span>
         <%= @metrics.organisation_name %>
       </h1>
+      <%= render 'metrics/time_period_selector' %>
     </div>
 
     <aside class="column-third download">
@@ -23,13 +24,11 @@
 
   <div class="grid-row">
     <div class="column-full">
-
       <%= tabs(current_page: page) do |tabs| %>
         <% tabs.link_to tab_name('Departments', count: @metrics.departments_count), url_for(request.params.merge(group_by: Metrics::Group::Department)) if @metrics.has_departments? %>
         <% tabs.link_to tab_name('Delivery organisations', count: @metrics.delivery_organisations_count), url_for(request.params.merge(group_by: Metrics::Group::DeliveryOrganisation)) if @metrics.has_delivery_organisations? %>
         <% tabs.link_to tab_name('Services', count: @metrics.services_count), url_for(request.params.merge(group_by: Metrics::Group::Service)) if @metrics.has_services? %>
       <% end %>
-
 
       <div class="o-filter-panel" data-behaviour="o-filter-panel">
         <%= form_for @metrics, as: :filter, url: '', method: 'get', class: 'filter-row' do |f| %>
