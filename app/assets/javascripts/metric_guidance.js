@@ -4,7 +4,7 @@
   $.fn.metricGuidanceToggle = function () {
     $(this).on('click', function (e) {
       e.preventDefault()
-
+      console.log('Clicked')
       var element = $(this)
       var container = element.parents('[data-metric-item-guidance]')
       var data = container.data()

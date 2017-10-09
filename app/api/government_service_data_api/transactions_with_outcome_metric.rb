@@ -31,4 +31,17 @@ class GovernmentServiceDataAPI::TransactionsWithOutcomeMetric
     return @count_with_intended_outcome if @count_with_intended_outcome.in? [NOT_PROVIDED, NOT_APPLICABLE]
     (@count_with_intended_outcome.to_f / @count) * 100
   end
+
+  def not_with_intended_outcome
+    if @count != NOT_PROVIDED && @count_with_intended_outcome != NOT_PROVIDED
+      return @count - @count_with_intended_outcome if @count.positive? && @count_with_intended_outcome.positive?
+    end
+  end
+
+  def not_with_intended_outcome_percentage
+    not_outcome = not_with_intended_outcome
+    return not_outcome.to_f if @count_with_intended_outcome.nil? || @count == NOT_PROVIDED
+
+    (not_outcome.to_f / @count) * 100
+  end
 end

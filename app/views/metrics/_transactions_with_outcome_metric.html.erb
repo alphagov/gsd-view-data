@@ -6,8 +6,12 @@
       <% end %>
 
       <span class="total">
-        <span class="data-item bold-large"><%= metric_to_human(transactions_with_outcome_metric.count) %></span>
-        <span class="data-item bold">transactions ending in an outcome</span>
+        <span class="metric-name bold-medium">
+          <a href="javascript:0" class="a-metric-guidance-expand" data-behaviour="a-metric-guidance-toggle">Transactions processed</a>
+        </span>
+        <span class="metric-value bold-medium"><%= metric_to_human(transactions_with_outcome_metric.count) %>
+        </span>
+
         <% if @metrics.show_completeness? && !metric_group.totals?  %>
           <%= item.incomplete transactions_with_outcome_metric.completeness %>
         <% end %>
@@ -16,10 +20,10 @@
 
     <%= metric_item(Metrics::Items::TransactionsEndingInOutcomeWithIntendedOutcome, transactions_with_outcome_metric.count_with_intended_outcome) do |item| %>
       <% item.description do %>
-        <strong><%= metric_to_human(transactions_with_outcome_metric.count_with_intended_outcome) %></strong> transactions with intended outcome (<%= metric_to_percentage(transactions_with_outcome_metric.with_intended_outcome_percentage) %>)
+        <strong><%= metric_to_human(transactions_with_outcome_metric.count_with_intended_outcome) %></strong>with the user's intended outcome (<%= metric_to_percentage(transactions_with_outcome_metric.with_intended_outcome_percentage) %>)
       <% end %>
 
-      <span class="metric-name">Ending in the user&apos;s intended outcome</span>
+      <span class="metric-name">with the user&apos;s intended outcome</span>
       <span class="metric-value">
         <%= item.value %>
         <%= item.percentage transactions_with_outcome_metric.with_intended_outcome_percentage %>
@@ -28,5 +32,23 @@
         <% end %>
       </span>
     <% end %>
+
+    <% if transactions_with_outcome_metric.not_with_intended_outcome %>
+      <%= metric_item(Metrics::Items::TransactionsEndingInOutcomeWithIntendedOutcome, transactions_with_outcome_metric.not_with_intended_outcome) do |item| %>
+        <% item.description do %>
+          <strong><%= metric_to_human(transactions_with_outcome_metric.not_with_intended_outcome) %></strong>not with the user's intended outcome (<%= metric_to_percentage(transactions_with_outcome_metric.not_with_intended_outcome_percentage) %>)
+        <% end %>
+
+        <span class="metric-name">not with the user&apos;s intended outcome</span>
+        <span class="metric-value">
+          <%= item.value %>
+          <%= item.percentage transactions_with_outcome_metric.not_with_intended_outcome_percentage %>
+          <% if @metrics.show_completeness? && !metric_group.totals?  %>
+            <%= item.completeness transactions_with_outcome_metric.completeness['intended'] %>
+          <% end %>
+        </span>
+      <% end %>
+    <% end %>
   </ul>
 </div>
+

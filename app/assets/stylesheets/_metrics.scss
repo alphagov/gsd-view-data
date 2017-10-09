@@ -50,11 +50,13 @@ main {
 
   .metric-name {
     display: inline-block;
+    vertical-align: top;
+    width: 60%;
   }
 
-  .metric-name, .metric-value {
+  .metric-value {
     vertical-align: top;
-    width: 50%;
+    width: 40%;
   }
 
   .total {

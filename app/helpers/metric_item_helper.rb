@@ -17,9 +17,10 @@ module MetricItemHelper
     html[:class] << 'sampled' if sampled
 
     if guidance?(identifier)
-      content += content_tag(:span, class: 'm-metric-guidance-toggle') do
-        content_tag(:a, '+', href: '#', class: 'a-metric-guidance-expand', data: { behaviour: 'a-metric-guidance-toggle' })
-      end
+      # Re-add this when we have trends for individual items
+      #content += content_tag(:span, class: 'm-metric-guidance-toggle') do
+      #  content_tag(:a, '+', href: '#', class: 'a-metric-guidance-expand', data: { behaviour: 'a-metric-guidance-toggle' })
+      #end
     end
 
     row = content_tag(:div, content, class: 'row')
